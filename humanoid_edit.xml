@@ -44,11 +44,11 @@
         <site name="head" class="touch" type="sphere" size=".091"/>
         <camera name="egocentric" pos=".09 0 0" xyaxes="0 -1 0 .1 0 1" fovy="80"/>
         <body name="head_eye" pos="0 0 0">
-          <geom name="head_eye" type="sphere" size=".09" material="grid"/>
+          <geom name="head_eye" type="sphere" size=".09" contype="0" conaffinity="0" density=".0000000001011" material="grid"/>
           <site name="head_eye" class="touch" type="sphere" size=".091"/>
           <joint name="eye_z" pos="0 0 0" range="-45 45" axis="0 0 1" class="big_joint"/>
           <joint name="eye_y" pos="0 0 0" range="-45 45" axis="0 1 0" class="big_joint"/>
-          <camera name="ahmycamera" pos=".09 0 0" xyaxes="0 -1 0 .1 0 1" fovy="80"/>
+          <camera name="eye" pos=".09 0 0" xyaxes="0 -1 0 .1 0 1" fovy="80"/>
         </body>
       </body>
       <body name="lower_waist" pos="-.01 0 -.260" quat="1.000 0 -.002 0">
@@ -142,6 +142,8 @@
   </worldbody>
 
   <actuator>
+    <motor name="eye_z"           gear="40"  joint="eye_z"/>
+    <motor name="eye_y"           gear="40"  joint="eye_y"/>
     <motor name="abdomen_y"       gear="40"  joint="abdomen_y"/>
     <motor name="abdomen_z"       gear="40"  joint="abdomen_z"/>
     <motor name="abdomen_x"       gear="40"  joint="abdomen_x"/>
@@ -163,8 +165,6 @@
     <motor name="left_shoulder1"  gear="20"  joint="left_shoulder1"/>
     <motor name="left_shoulder2"  gear="20"  joint="left_shoulder2"/>
     <motor name="left_elbow"      gear="40"  joint="left_elbow"/>
-    <motor name="eye_y"           gear="40"  joint="eye_y"/>
-    <motor name="eye_z"           gear="40"  joint="eye_z"/>
   </actuator>
 
   <sensor>
