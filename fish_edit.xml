@@ -1,6 +1,6 @@
 <mujoco model="fish">
-  <include file="./common/visual.xml"/>
-  <include file="./common/materials.xml"/>
+  <include file="./common_from_dmc/visual.xml"/>
+  <include file="./common_from_dmc/materials.xml"/>
   <asset>
       <texture name="skybox" type="skybox" builtin="gradient" rgb1=".4 .6 .8" rgb2="0 0 0" width="800" height="800" mark="random" markrgb="1 1 1"/>
   </asset>
