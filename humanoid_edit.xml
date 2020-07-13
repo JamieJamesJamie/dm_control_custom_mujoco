@@ -44,7 +44,7 @@
         <site name="head" class="touch" type="sphere" size=".091"/>
         <camera name="egocentric" pos=".09 0 0" xyaxes="0 -1 0 .1 0 1" fovy="80"/>
         <body name="head_eye" pos="0 0 0">
-          <geom name="head_eye" type="sphere" size=".09" contype="0" conaffinity="0" density=".0000000001011" material="eye_grid"/>
+          <geom name="head_eye" type="sphere" size=".09" contype="0" conaffinity="0" mass=".00000000000031" material="eye_grid"/>
           <site name="head_eye" class="touch" type="sphere" size=".091"/>
           <joint name="eye_z" pos="0 0 0" range="-45 45" axis="0 0 1" class="big_joint"/>
           <joint name="eye_y" pos="0 0 0" range="-45 45" axis="0 1 0" class="big_joint"/>
