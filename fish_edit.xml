@@ -32,7 +32,7 @@
       <geom name="eye" type="ellipsoid" pos="0 .055 .015" size=".008 .012 .008" euler="-10 0 0" material="eye" mass="0" rgba="0 0 0 0"/>
       <camera name="eye" pos="0 .06 .02" xyaxes="1 0 0 0 0 1"/>
       <body name="controllable_eye" pos="0 0 0">
-        <geom name="controllable_eye" type="sphere" pos="0 .055 .015" size=".008" contype="0" conaffinity="0" mass=".00000000004" material="eye_grid"/>
+        <geom name="controllable_eye" type="sphere" pos="0 .055 .015" size=".008" contype="0" conaffinity="0" density=".000019" material="eye_grid"/>
         <joint name="eye_x" pos="0 .055 .015" range="-45 45" axis="1 0 0" damping="5" stiffness="20" type="hinge" armature=".01" limited="true" solimplimit="0 .8 .1"/>
         <joint name="eye_z" pos="0 .055 .015" range="-45 45" axis="0 0 1" damping="5" stiffness="20" type="hinge" armature=".01" limited="true" solimplimit="0 .8 .1"/>
         <camera name="controllable_eye" pos="0 .06 .02" xyaxes="1 0 0 0 0 1"/>
