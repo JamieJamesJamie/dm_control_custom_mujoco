@@ -29,8 +29,14 @@
       <light name="light" diffuse=".6 .6 .6" pos="0 0 0.5" dir="0 0 -1" specular=".3 .3 .3" mode="track"/>
       <joint name="root" type="free" damping="0" limited="false"/>
       <site name="torso" size=".01" rgba="0 0 0 0"/>
-      <geom name="eye" type="ellipsoid" pos="0 .055 .015" size=".008 .012 .008" euler="-10 0 0" material="eye" mass="0"/>
+      <geom name="eye" type="ellipsoid" pos="0 .055 .015" size=".008 .012 .008" euler="-10 0 0" material="eye" mass="0" rgba="0 0 0 0"/>
       <camera name="eye" pos="0 .06 .02" xyaxes="1 0 0 0 0 1"/>
+      <body name="controllable_eye" pos="0 0 0">
+        <geom name="controllable_eye" type="sphere" pos="0 .055 .015" size=".008" contype="0" conaffinity="0" mass=".00000000004" material="eye_grid"/>
+        <joint name="eye_x" pos="0 .055 .015" range="-45 45" axis="1 0 0" damping="5" stiffness="20" type="hinge" armature=".01" limited="true" solimplimit="0 .8 .1"/>
+        <joint name="eye_z" pos="0 .055 .015" range="-45 45" axis="0 0 1" damping="5" stiffness="20" type="hinge" armature=".01" limited="true" solimplimit="0 .8 .1"/>
+        <camera name="controllable_eye" pos="0 .06 .02" xyaxes="1 0 0 0 0 1"/>
+      </body>
       <geom name="mouth" type="capsule" fromto="0 .079 0 0 .07 0" size=".005" material="effector" mass="0"/>
       <geom name="lower_mouth" type="capsule" fromto="0 .079 -.004 0 .07 -.003" size=".0045" material="effector" mass="0"/>
       <geom name="torso" type="ellipsoid" size=".01 .08 .04" mass="0"/>
@@ -75,6 +81,9 @@
     <position name="fins_flap"      tendon="fins_flap"      ctrlrange="-1 1"    kp="3e-4"/>
     <position name="finleft_pitch"  joint="finleft_pitch"   ctrlrange="-1 1"    kp="1e-4"/>
     <position name="finright_pitch" joint="finright_pitch"  ctrlrange="-1 1"    kp="1e-4"/>
+
+    <motor name="eye_x" gear="40" joint="eye_x" ctrlrange="-1 1" ctrllimited="true"/>
+    <motor name="eye_z" gear="40" joint="eye_z" ctrlrange="-1 1" ctrllimited="true"/>
   </actuator>
 
   <sensor>
