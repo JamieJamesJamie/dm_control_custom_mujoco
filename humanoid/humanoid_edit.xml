@@ -1,7 +1,7 @@
 <mujoco model="humanoid">
-  <include file="./common_from_dmc/skybox.xml"/>
-  <include file="./common_from_dmc/visual.xml"/>
-  <include file="./common_from_dmc/materials.xml"/>
+  <include file="./../common_from_dmc/skybox.xml"/>
+  <include file="./../common_from_dmc/visual.xml"/>
+  <include file="./../common_from_dmc/materials.xml"/>
 
   <statistic extent="2" center="0 0 1"/>
 
